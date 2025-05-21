@@ -1,0 +1,155 @@
+{
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off", "fixable": true },
+    { "rule": "format/*", "severity": "off", "fixable": true },
+    { "rule": "*-indent", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-order", "severity": "off", "fixable": true },
+    { "rule": "*-dangle", "severity": "off", "fixable": true },
+    { "rule": "*-newline", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "*semi", "severity": "off", "fixable": true }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "json5",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+  "commit-message-editor.staticTemplate": [
+    "Feat 標籤- 新版本 (Ken ho)",
+    "",
+    "新需求",
+    "https://www.google.com/",
+    "https://www.google.com/",
+    "https://www.google.com/"
+  ],
+  "commit-message-editor.dynamicTemplate": [
+    "{type}{scope}{description} {author}",
+    "",
+    "{body}",
+    "{urls}"
+  ],
+  "commit-message-editor.tokens": [
+    {
+      "label": "*Type",
+      "name": "type",
+      "type": "enum",
+      "suffix": ".",
+      "options": [
+        {
+          "label": "Feat",
+          "value": "Feat",
+          "description": "新功能 (base)"
+        },
+        {
+          "label": "Fix",
+          "value": "Fix",
+          "description": "修復bug，中、低優先度 (base)"
+        },
+        {
+          "label": "Hotfix",
+          "value": "Hotfix",
+          "description": "修復bug，高優先度 (base)"
+        },
+        {
+          "label": "Chore",
+          "value": "Chore",
+          "description": "對建構過程或輔助工具的更改，例如新增/移除/更新plugin、描述檔 (base)"
+        },
+        {
+          "label": "Docs",
+          "value": "Docs",
+          "description": "修改固定的範本文檔"
+        },
+        {
+          "label": "Refactor",
+          "value": "Refactor",
+          "description": "重構，不包括修復bug和新功能"
+        },
+        {
+          "label": "Perf",
+          "value": "Perf",
+          "description": "效能優化"
+        },
+        {
+          "label": "Test",
+          "value": "Test",
+          "description": "新增/修改測試用的程式"
+        },
+        {
+          "label": "Style",
+          "value": "Style",
+          "description": "程式風格修改及IDE setting，例如空格、格式、分號等"
+        }
+      ]
+    },
+    {
+      "label": "改動的區域",
+      "name": "scope",
+      "type": "text",
+      "prefix": " [",
+      "suffix": "] -",
+      "maxLength": 8
+    },
+    {
+      "label": "*簡述 或 Asana Title",
+      "name": "description",
+      "type": "text",
+      "prefix": " "
+    },
+    {
+      "label": "*Author",
+      "name": "author",
+      "type": "text",
+      "prefix": "(",
+      "suffix": ")"
+    },
+    {
+      "label": "Task URL",
+      "name": "urls",
+      "type": "text",
+      "multiline": true,
+      "lines": 1
+    },
+    {
+      "label": "補充說明",
+      "name": "body",
+      "type": "text",
+      "multiline": true,
+      "lines": 5
+    }
+  ]
+}
