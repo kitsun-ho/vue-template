@@ -1,4 +1,5 @@
 import type { UserConfig } from 'vite';
+import { fileURLToPath } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import UnoCSS from 'unocss/vite';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -93,10 +94,9 @@ export default defineConfig(async ({ mode }) => {
       }),
     ],
     resolve: {
-      alias: {
-
-        // '@': fileURLToPath(new URL('./src', import.meta.url)),
-      },
+      alias: [
+        { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+      ],
     },
     // 若要使用代理，請取消註解，並將 target 改為你的 API 路徑，建議配和 .env 使用
     // server: {

@@ -1,23 +1,31 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
     "paths": {
-      "vite-plugin-vue-tracer/client/listeners": [
-        "./src/client/listeners.ts"
-      ],
-      "vite-plugin-vue-tracer/client/record": [
-        "./src/client/record.ts"
-      ]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
+    "types": ["node"],
+    "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "auto-imports.d.ts",
+    "components.d.ts",
+    "global.d.ts"
+  ]
 }
